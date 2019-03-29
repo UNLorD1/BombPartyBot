@@ -28,21 +28,22 @@
     - Refuse word
 
 - If timer = 0:
+    - Reset timer
     - Remove life from active player
         - If number of lives = 0
             - Display msg saying 'X has blown up' (make some funny death lines)
-        - If number of remaining players = 1
-            - Display msg saying 'X has won'
     - Move to next player
         - If next player has 0 lives:
             - Move to next player
     - If all players failed same string:
         - Reveal word with answer
-        - Generate string
+        - Generate new string
     - Else:
         - Repeat same string
 
-
+- If number of active players = 1
+    - Display msg saying 'X has won game'
+    - END GAME
 
 ---EXTRA---
 - When all letters are used, get +1 life. 3 max.
