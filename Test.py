@@ -12,6 +12,9 @@
         - If number >= 0.5, make string 3 letters
     - Pick a random word in the dictionary
     - Select a random 2-3 letter sequence in that dictionary
+    *ALTERNATIVE METHOD*
+    - Pick a 2-3 letter string from pre-existing list
+        - Would have to make sure all strings from list can form valid answer
 - Start a 10 second timer
     - Ideal: make displayed time decrease in 0.1 second intervals. 10.0 -> 9.9 -> 9.8 -> etc.
 - Input = user input
