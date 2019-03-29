@@ -2,8 +2,8 @@ import pickle
 import random
 
 
-def get_dict():
-    return pickle.load(open("dictionary.p", "rb"))
+def get_dict(dict_file: str):
+    return pickle.load(open(dict_file, "rb"))
 
 
 def generate_substring(dictionary):
@@ -39,7 +39,7 @@ def input_check(dummy_dict, user_input, substring, words_used_list):
 
 if __name__ == "__main__":
     words_used_list = []
-    dummy_dict = get_dict()
+    dummy_dict = get_dict("dictionary.p")
     substring = generate_substring(dummy_dict)
     print(dummy_dict)
     print(substring)
