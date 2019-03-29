@@ -13,6 +13,16 @@ def generate_substring(dictionary):
     return substring
 
 
+def get_input(dummy_dict, substring, words_used_list):
+    while True:
+        user_input = input("Type a word: ")
+        correct_input = input_check(dummy_dict, user_input, substring, words_used_list)
+        if correct_input:
+            words_used_list.append(user_input)
+            print("Code works")
+            break
+
+
 def input_check(dummy_dict, user_input, substring, words_used_list):
     if substring not in user_input:
         print("Invalid input: does not contain string")
@@ -27,17 +37,10 @@ def input_check(dummy_dict, user_input, substring, words_used_list):
     return True
 
 
-while True:
-    user_input = input("Type a word: ")
-    correct_input = input_check(dummy_dict, user_input, substring, words_used_list)
-    if correct_input:
-        words_used_list.append(user_input)
-        break
-
-
 if __name__ == "__main__":
     words_used_list = []
     dummy_dict = get_dict()
     substring = generate_substring(dummy_dict)
     print(dummy_dict)
     print(substring)
+    get_input(dummy_dict, substring, words_used_list)
