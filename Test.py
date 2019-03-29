@@ -8,14 +8,41 @@
 ---LOGIC---
 - Generate and display a 2-3 letter string
     - String must exist within a word in dictionary
+- Start a 10 second timer
 - Input = user input
-- 2 checks:
+
+- 3 checks:
     - Check if user input contains String
-    - If yes check if user input matches word in dictionary
-- If both checks = true, move to next person and reset timer.
-- If any checks = false, refuse word.
-- If timer = 0, remove life from player, move to next player. Repeat same string.
-    - If all players fail same string, reveal word with answer. Generate new string.
+        - If yes, return true
+    - Does user input match word in words_used list
+        - If no, return true
+    - Does user input match word in dictionary
+        - If yes, return true
+
+- If all checks = true:
+    - Move to next person
+    - Reset timer
+    - Add user input to words_used list
+
+- If any checks = false:
+    - Refuse word
+
+- If timer = 0:
+    - Remove life from active player
+        - If number of lives = 0
+            - Display msg saying 'X has blown up' (make some funny death lines)
+        - If number of remaining players = 1
+            - Display msg saying 'X has won'
+    - Move to next player
+        - If next player has 0 lives:
+            - Move to next player
+    - If all players failed same string:
+        - Reveal word with answer
+        - Generate string
+    - Else:
+        - Repeat same string
+
+
 
 ---EXTRA---
 - When all letters are used, get +1 life. 3 max.
