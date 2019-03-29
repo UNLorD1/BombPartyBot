@@ -6,9 +6,14 @@
 - 2 lives
 
 ---LOGIC---
-- Generate and display a 2-3 letter string
-    - String must exist within a word in dictionary
+- Generate and display a 2 or 3 letter string
+    - RNG generate a number between 0 and 1
+        - If number <0.5, make string 2 letters
+        - If number >= 0.5, make string 3 letters
+    - Pick a random word in the dictionary
+    - Select a random 2-3 letter sequence in that dictionary
 - Start a 10 second timer
+    - Ideal: make displayed time decrease in 0.1 second intervals. 10.0 -> 9.9 -> 9.8 -> etc.
 - Input = user input
 
 - 3 checks:
