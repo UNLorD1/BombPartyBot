@@ -2,18 +2,18 @@ import pickle
 import random
 
 
-def get_dict():
-    return pickle.load(open("dictionary.p", "rb"))
+def get_dict(dict_file: str) -> {str}:
+    return pickle.load(open(dict_file, "rb"))
 
 
-def generate_substring(dictionary):
+def generate_substring(dictionary: {str}) -> str:
     random_word = random.sample(dummy_dict, 1)[0]
     random_num = random.randint(0, len(random_word)-2)
     substring = random_word[random_num: random_num+3]
     return substring
 
 
-def get_input(dummy_dict, substring, words_used_list):
+def get_input(dummy_dict: {str}, substring: str, words_used_list: [str]):
     while True:
         user_input = input("Type a word: ")
         correct_input = input_check(dummy_dict, user_input, substring, words_used_list)
@@ -23,7 +23,7 @@ def get_input(dummy_dict, substring, words_used_list):
             break
 
 
-def input_check(dummy_dict, user_input, substring, words_used_list):
+def input_check(dummy_dict: {str}, user_input: str, substring: str, words_used_list: [str]) -> bool:
     if substring not in user_input:
         print("Invalid input: does not contain string")
         return False
@@ -39,7 +39,7 @@ def input_check(dummy_dict, user_input, substring, words_used_list):
 
 if __name__ == "__main__":
     words_used_list = []
-    dummy_dict = get_dict()
+    dummy_dict = get_dict("dictionary.p")
     substring = generate_substring(dummy_dict)
     print(dummy_dict)
     print(substring)
